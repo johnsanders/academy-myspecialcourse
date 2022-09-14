@@ -1,0 +1,17 @@
+{
+  "name": "academy-myspecialcourse-block",
+  "version": "1.0.0",
+	"type": "module",
+  "repository": {
+
+    "url": "git+https://github.com/johnsanders/academy-resources-block.git"
+  },
+  "author": "John Sanders",
+	"scripts": {
+		"deploy": "node ./deploy.js"
+	},
+  "license": "UNLICENSED",
+  "dependencies": {
+    "adm-zip": "^0.5.9"
+  }
+}
