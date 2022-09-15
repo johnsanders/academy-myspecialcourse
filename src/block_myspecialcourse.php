@@ -43,7 +43,7 @@ class block_myspecialcourse extends block_base {
 		$modulesInfo = get_fast_modinfo($course);
 		$items = [];
 		foreach ($modulesInfo->cms as $module) {
-			if (!$module->uservisible()) continue;
+			if (!$module->uservisible) continue;
 			$iconUrl = str_replace('24', '96', (string)$module->get_icon_url());
 			array_push($items, [$module->get_formatted_name(), $module->modname, $module->id, $iconUrl]);
 		}
