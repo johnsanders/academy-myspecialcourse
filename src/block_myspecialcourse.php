@@ -8,10 +8,10 @@ class block_myspecialcourse extends block_base {
 	function has_config() {
 		return false;
 	}
-	public function instance_allow_multiple() {
+	function instance_allow_multiple() {
 		return true;
 	}
-	public function hide_header() {
+	function hide_header() {
 		return true;
 	}
 	function create_item($item) {
@@ -22,7 +22,7 @@ class block_myspecialcourse extends block_base {
 								<div class='card-body course-info-container'>
 									<div class='text-center w-100 mb-2'>
 										<a href='$url'>
-											<img src=$iconUrl style='height: 30px;' />
+											<img src=$iconUrl style='height: 50px;' />
 										</a>
 									</div>
 									<div class='text-center w-100'>
@@ -35,7 +35,7 @@ class block_myspecialcourse extends block_base {
 		";
 	}
 	function get_content() {
-		global $CFG, $DB;
+		global $DB;
 		if ($this->content !== NULL) return $this->content;
 		if (!$this->config->courseid) return NULL;
 		$title = get_string($this->config->title, 'block_myspecialcourse');
@@ -43,8 +43,9 @@ class block_myspecialcourse extends block_base {
 		$modulesInfo = get_fast_modinfo($course);
 		$items = [];
 		foreach ($modulesInfo->cms as $module) {
-			if (!$module->is_visible_on_course_page()) continue;
-			array_push($items, [$module->get_formatted_name(), $module->modname, $module->id, (string)$module->get_icon_url()]);
+			if (!$module->uservisible()) continue;
+			$iconUrl = str_replace('24', '96', (string)$module->get_icon_url());
+			array_push($items, [$module->get_formatted_name(), $module->modname, $module->id, $iconUrl]);
 		}
 		$itemsHtml = '';
 		foreach ($items as $item) {
