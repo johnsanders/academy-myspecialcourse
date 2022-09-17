@@ -14,24 +14,25 @@ class block_myspecialcourse extends block_base {
 	function hide_header() {
 		return true;
 	}
+	// http://ec2-18-195-50-77.eu-central-1.compute.amazonaws.com/theme/image.php/boost/block_timeline/1663168505/activities
 	function create_item($item) {
 		[$title, $modName, $id, $iconUrl] = $item;
 		$url = "/mod/$modName/view.php?id=$id`";
 		return "
-							<div class='card dashboard-card' role='listitem' data-region='course-content'>
+							<a href='$url' class='card dashboard-card mb-1 py-2'>
 								<div class='card-body course-info-container'>
-									<div class='text-center w-100 mb-2'>
-										<a href='$url'>
-											<img src=$iconUrl style='height: 50px;' />
-										</a>
-									</div>
-									<div class='text-center w-100'>
-										<a class='aalink coursename text-center mr-2' href='$url' style='font-size: 1.2em'>
+									<div class='d-flex text-truncate align-items-center'>
+										<div class='d-flex align-self-center'>
+											<img title='Video' alt='Video' class='icon' src=$iconUrl />
+										</div>
+										<div class='w-100 line-height-3 text-truncate ml-2'>
+											<h6 class='mb-0 text-truncate'>
 												$title
-										</a>
+											</h6>
+										</div>
 									</div>
 								</div>
-							</div>
+							</a>
 		";
 	}
 	function get_content() {
@@ -52,15 +53,21 @@ class block_myspecialcourse extends block_base {
 			$itemsHtml .= $this->create_item($item);
 		}
 		$content = "
-			<section class='block' style='margin: 0 -5px 3em -5px; padding: 0;'>
+			<section class='block block_recentlyaccesseditems card mb-3'>
 				<div class='card-body p-3'>
 					<h5 class='card-title d-inline'>
 							$title
 					</h5>
-					<div class='content mt-3'>
-						<div class='container-fluid p-0'>
-							<div class='card-deck dashboard-card-deck' data-region='card-deck' role='list'>
-								$itemsHtml
+					<div class='card-text content mt-3'>
+						<div class='block-recentlyaccesseditems block-cards' data-region='myspecialcourse'>
+							<div class='container-fluid' p-0>
+								<div data-region='myspecialcourse-view' data-noitemsimgurl='/theme/image.php/cnn/block_recentlyaccesseditems/1663327916/items'>
+									<div data-region='myspecialcourse-view-content'>
+										<div class='card-deck dashboard-card-deck' role='list'>
+											$itemsHtml
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>

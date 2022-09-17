@@ -7,9 +7,8 @@
   },
   "author": "John Sanders",
   "scripts": {
-    "deploy": "node ./deploy.js"
+    "build": "node ./build.js"
   },
-  "license": "UNLICENSED",
   "dependencies": {
     "adm-zip": "^0.5.9",
     "fs-extra": "^10.1.0"
