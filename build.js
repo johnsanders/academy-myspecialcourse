@@ -6,6 +6,7 @@ const outDir = './dist';
 const pluginNames = [
 	'block_calendar_upcoming_img',
 	'block_myspecialcourse',
+	'block_vimeo',
 ]
 
 const run = () => {
