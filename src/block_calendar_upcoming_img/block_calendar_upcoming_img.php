@@ -47,7 +47,10 @@ class block_calendar_upcoming_img extends block_base
             "class" => "event d-flex align-items-center justify-content-between",
             "data-region" => "event-item",
         ]);
-        $eventHtml .= html_writer::start_tag('div', ["id" => "textContainer"]);
+        $eventHtml .= html_writer::start_tag('div', [
+            "class" => "display: flex; flex-direction: column; justify-content: space-evenly;",
+            "id" => "textContainer",
+        ]);
         $eventHtml .= html_writer::link(
             $eventLink,
             $event->name,
