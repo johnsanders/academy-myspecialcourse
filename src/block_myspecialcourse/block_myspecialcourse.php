@@ -14,7 +14,6 @@ class block_myspecialcourse extends block_base {
 	function hide_header() {
 		return true;
 	}
-	// http://ec2-18-195-50-77.eu-central-1.compute.amazonaws.com/theme/image.php/boost/block_timeline/1663168505/activities
 	function create_item($item) {
 		[$title, $modName, $id, $iconUrl] = $item;
 		$url = "/mod/$modName/view.php?id=$id`";

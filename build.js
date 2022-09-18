@@ -2,19 +2,25 @@ import AdmZip from "adm-zip";
 import fs from 'fs';
 import fsExtra from 'fs-extra';
 
-const outDir = './dist/bundle';
-const pluginName = 'block_myspecialcourse';
+const outDir = './dist';
+const pluginNames = [
+	'block_calendar_upcoming_img',
+	'block_myspecialcourse',
+]
 
-const run = async () => {
-	if (fs.existsSync(outDir)) fs.rmSync(outDir, {force: true, recursive: true});
-	fs.mkdirSync(outDir)
-	await fsExtra.copy('./src', `${outDir}/${pluginName}`, {overwrite: true});
-
-	const zip = new AdmZip();
-	zip.addLocalFolder(outDir);
-	zip.writeZip('./dist/block_myspecialcourse.zip');
-
-	fs.rmSync(outDir, {force: true, recursive: true});
-};
+const run = () => {
+	pluginNames.forEach(async (pluginName) => {
+		const tmpDir = `${outDir}/${pluginName}`;
+		const srcDir = `${tmpDir}/${pluginName}`;
+		const outFilename = `${outDir}/${pluginName}.zip`;
+		if (fs.existsSync(outFilename)) fs.rmSync(outFilename, {force: true});
+		if (fs.existsSync(tmpDir)) fs.rmSync(tmpDir, {force: true, recursive: true});
+		await fsExtra.copy(`./src/${pluginName}`, srcDir, {overwrite: true});
+		const zip = new AdmZip();
+		zip.addLocalFolder(tmpDir);
+		zip.writeZip(outFilename);
+		fs.rmSync(tmpDir, {force: true, recursive: true});
+	})
+}
 
 run();
