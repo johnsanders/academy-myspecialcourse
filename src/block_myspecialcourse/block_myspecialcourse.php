@@ -82,7 +82,6 @@ class block_myspecialcourse extends block_base
         if ($this->content !== null) {
             return $this->content;
         }
-
         if (!$this->config->courseid) {
             return null;
         }

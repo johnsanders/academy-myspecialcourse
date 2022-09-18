@@ -8,7 +8,6 @@ class block_calendar_upcoming_img extends block_base
     public function hide_header()
     {
         return true;
-
     }
     public function create_events_html($events)
     {
@@ -41,7 +40,6 @@ class block_calendar_upcoming_img extends block_base
         if (count($matches) > 1) {
             $imgTag = html_writer::img($matches[1], "", ["style" => "max-height: 6em; border-radius: 10px;"]);
         }
-
         $eventHtml = '';
         $eventHtml .= html_writer::start_tag('div', [
             "class" => "event d-flex align-items-center justify-content-between",
@@ -85,10 +83,8 @@ class block_calendar_upcoming_img extends block_base
         if ($this->content !== null) {
             return $this->content;
         }
-
         $calendar = \calendar_information::create(time(), true, true);
         $calendarEvents = calendar_get_view($calendar, 'upcoming');
-
         $this->content = new stdClass;
         $this->content->text = $this->create_events_html($calendarEvents[0]->events);
         return $this->content;
