@@ -1,0 +1,67 @@
+/* Hide Recorded Seminars course in dashboard My Overview block because we're using it as My Resources*/
+.pagelayout-mydashboard .block-myoverview div[data-course-id="36"] {
+  display: none;
+}
+/* Hide Ethics - Kurdish course in dashboard My Overview block because we're using it as My Resources*/
+.pagelayout-mydashboard .block-myoverview div[data-course-id="39"] {
+  display: none;
+}
+/* Hide Ethics - Arabic course in dashboard My Overview block because we're using it as My Resources*/
+.pagelayout-mydashboard .block-myoverview div[data-course-id="40"] {
+  display: none;
+}
+/* Hide Recorded Seminars course on My Courses page */
+#page-local-mycourses-index .block-myoverview div[data-course-id="36"] {
+  display: none;
+}
+/* Hide UCD resources course on My Courses page */
+#page-local-mycourses-index .block-myoverview div[data-course-id="37"] {
+  display: none;
+}
+/* Hide Erbil resources course on My Courses page */
+#page-local-mycourses-index .block-myoverview div[data-course-id="38"] {
+  display: none;
+}
+/* Always show calender events, even at smallest breakpoint */
+table.calendartable td.day div.hidden-phone {
+	display: block !important;
+}
+table.calendartable td.day div.hidden-tablet {
+	display: none !important;
+}
+/* Hide Event Type section of calendar popup -- irrelevant in our use case -- doesn't work on FF */
+div.summary-modal-container div.row:has( i[title="Event type"]) {
+	display: none;
+}
+/* Hide Course Name section of calendar popup -- irrelevant in our use case -- doesn't work on FF */
+div.summary-modal-container div.row:has( i[title="Course"]) {
+	display: none;
+}
+/* Hide Group Name section of calendar popup -- irrelevant in our use case -- doesn't work on FF */
+div.summary-modal-container div.row:has( i[title="Group"]) {
+	display: none;
+}
+/* Hide Event Type section of upcoming events -- irrelevant in our use case -- doesn't work on FF */
+div.event div.row:has( i[title="Event type"]) {
+	display: none;
+}
+/* Hide Course Name section of upcoming events -- irrelevant in our use case -- doesn't work on FF */
+div.event div.row:has( i[title="Course"]) {
+	display: none;
+}
+/* Hide Group Name section of upcoming events -- irrelevant in our use case -- doesn't work on FF */
+div.event div.row:has( i[title="Group"]) {
+	display: none;
+}
+/* Exit course button in SCORM modules is hidden under something and isn't clickable.  Bring it up. */
+.cnn-header-buttons {
+  z-index: 100;
+}
+/* Hide breadcrumbs */
+.breadcrumb {
+  display: none;
+}
+/* Add display: hidden !important class */
+.academyHiddenImportant {
+  display: none !important;
+}
