@@ -13,14 +13,14 @@ class block_calendar_upcoming_img extends block_base
     {
         $html = '';
         $html .= html_writer::start_tag('section', [
-            "id" => "block_calendar_upcoming_img",
-            "class" => "block_calendar_upcoming block card mb-3",
-            "role" => "complementary",
-            "data-block" => "calendar_upcoming",
             "aria-labelledby" => "block_calendar_upcoming_img_header",
+            "data-block" => "calendar_upcoming",
+            "class" => "block_calendar_upcoming block card mb-3",
+            "id" => "block_calendar_upcoming_img",
+            "role" => "complementary",
         ]);
         $html .= html_writer::start_tag('div', ["class" => "card-body p-3"]);
-        $html .= html_writer::start_tag('h5', ["id" => "block_calendar_upcoming_img_header", "class" => "card-title d-inline"]);
+        $html .= html_writer::start_tag('h5', ["class" => "card-title d-inline", "id" => "block_calendar_upcoming_img_header"]);
         $html .= get_string('upcomingevents', 'calendar');
         $html .= html_writer::end_tag('h5');
         $html .= html_writer::start_tag('div', ["class" => "card-text content calendarwrapper mt-3"]);
@@ -46,16 +46,16 @@ class block_calendar_upcoming_img extends block_base
             "data-region" => "event-item",
         ]);
         $eventHtml .= html_writer::start_tag('div', [
-            "class" => "display: flex; flex-direction: column; justify-content: space-evenly;",
-            "id" => "textContainer",
+            "class" => "textContainer",
+            "style" => "display: flex; flex-direction: column; justify-content: space-evenly;",
         ]);
         $eventHtml .= html_writer::link(
             $eventLink,
             $event->name,
             [
-                "data-type" => "event",
                 "data-action" => "view-event",
                 "data-event-id" => $event->id,
+                "data-type" => "event",
             ]
         );
         $eventHtml .= html_writer::start_tag('div', ["class" => "date"]);
@@ -63,9 +63,9 @@ class block_calendar_upcoming_img extends block_base
             new moodle_url("/calendar/view.php?view=day&amp;time={$event->timestart}"),
             $event->formattedtime,
             [
-                "data-type" => "event",
                 "data-action" => "view-event",
                 "data-event-id" => $event->id,
+                "data-type" => "event",
             ]
         );
         $eventHtml .= html_writer::end_tag('div');
