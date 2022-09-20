@@ -59,7 +59,7 @@ class block_myspecialcourse extends block_base
         $itemsHtml = '';
         $itemsHtml .= html_writer::start_tag('a', [
             "class" => "card dashboard-card mb-1 py-2",
-            "href" => "/mod/$modName/view.php?id=$id`",
+            "href" => "/mod/$modName/view.php?id=$id",
         ]);
         $itemsHtml .= html_writer::start_tag('div', ["class" => "card-body course-info-container"]);
         $itemsHtml .= html_writer::start_tag('div', ["class" => "d-flex text-truncate align-items-center"]);

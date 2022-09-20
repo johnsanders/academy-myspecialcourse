@@ -58,17 +58,7 @@ class block_calendar_upcoming_img extends block_base
                 "data-type" => "event",
             ]
         );
-        $eventHtml .= html_writer::start_tag('div', ["class" => "date"]);
-        $eventHtml .= html_writer::link(
-            new moodle_url("/calendar/view.php?view=day&amp;time={$event->timestart}"),
-            $event->formattedtime,
-            [
-                "data-action" => "view-event",
-                "data-event-id" => $event->id,
-                "data-type" => "event",
-            ]
-        );
-        $eventHtml .= html_writer::end_tag('div');
+        $eventHtml .= html_writer::div($event->formattedtime, "date");
         $eventHtml .= html_writer::end_tag('div');
         $eventHtml .= html_writer::start_tag('a', ["href" => $eventLink]);
         $eventHtml .= $imgTag;
