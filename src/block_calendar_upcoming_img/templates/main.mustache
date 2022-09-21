@@ -40,10 +40,8 @@
 	    {{/events}}
 	</div>
 </div>
-{{#isloggedin}}
-	{{#js}}
-		require(['jquery', 'core_calendar/calendar_view'], function($, CalendarView) {
-		    CalendarView.init($("#calendar-upcoming-block-{{uniqid}}"), 'upcoming');
-		});
-	{{/js}}
-{{/isloggedin}}
+{{#js}}
+	require(['jquery', 'core_calendar/calendar_view'], function($, CalendarView) {
+		CalendarView.init($("#calendar-upcoming-block-{{uniqid}}"), 'upcoming');
+	});
+{{/js}}
