@@ -30,10 +30,8 @@ class block_calendar_upcoming_img extends block_base
         $this->add_event_images($data->events);
 
         $renderer = $this->page->get_renderer('core_calendar');
-        $html = $renderer->render_from_template("block_calendar_upcoming_img/main", $data);
-
         $this->content = new stdClass;
-        $this->content->text = $html;
+        $this->content->text = $renderer->render_from_template("block_calendar_upcoming_img/main", $data);
         return $this->content;
     }
 }
