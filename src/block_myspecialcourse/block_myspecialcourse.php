@@ -62,12 +62,12 @@ class block_myspecialcourse extends block_base
             "href" => "/mod/$modName/view.php?id=$id",
         ]);
         $itemsHtml .= html_writer::start_tag('div', ["class" => "card-body course-info-container"]);
-        $itemsHtml .= html_writer::start_tag('div', ["class" => "d-flex text-truncate align-items-center"]);
+        $itemsHtml .= html_writer::start_tag('div', ["class" => "d-flex align-items-center"]);
         $itemsHtml .= html_writer::start_tag('div', ["class" => "d-flex align-self-center"]);
         $itemsHtml .= html_writer::img($iconUrl, "Course Resource Icon", ["class" => "icon"]);
         $itemsHtml .= html_writer::end_tag('div');
-        $itemsHtml .= html_writer::start_tag('div', ["class" => "w-100 line-height-3 text-truncate ml-2"]);
-        $itemsHtml .= html_writer::start_tag('h6', ["class" => "mb-0 text-truncate"]);
+        $itemsHtml .= html_writer::start_tag('div', ["class" => "w-100 line-height-3 ml-2"]);
+        $itemsHtml .= html_writer::start_tag('h6', ["class" => "mb-0"]);
         $itemsHtml .= $title;
         $itemsHtml .= html_writer::end_tag('h6');
         $itemsHtml .= html_writer::end_tag('div');
