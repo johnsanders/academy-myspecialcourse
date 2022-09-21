@@ -1,0 +1,49 @@
+<div
+	class="block_calendar_upcoming"
+	data-template="block_calendar_upcoming_img/main"
+	id="calendar-upcoming-block-{{uniqid}}"
+>
+	<h5 class="card-title d-inline">
+		{{#str}}upcomingevents,calendar{{/str}}
+	</h5>
+	<div
+		class="card-text content calendarwrapper"
+		id="month-upcoming-mini-{{uniqid}}"
+		data-context-id="{{defaulteventcontext}}"
+		data-courseid="{{courseid}}"
+		data-categoryid="{{categoryid}}"
+	>
+	    {{#events}}
+		<div
+			class="event d-flex align-items-center justify-content-between
+			data-eventtype-{{normalisedeventtype}}="1"
+			data-region="event-item"
+		>
+			<div class="textContainer" style="display: flex; flex-direction: column; justify-content: space-evenly;">
+				<a
+					class="text-truncate"
+					data-type="event"
+					data-action="view-event"
+					data-event-id="{{id}}"
+					href="{{viewurl}}"
+				>
+					{{{name}}}
+				</a>
+				<div class="date">{{{formattedtime}}}</div>
+			</div>
+			{{#imageurl}}
+				<a href="{{viewurl}}">
+					<img src={{imageurl}} style="max-height: 6em; border-radius: 10px;" />
+				</a>
+			{{/imageurl}}
+		</div>
+	    {{/events}}
+	</div>
+</div>
+{{#isloggedin}}
+	{{#js}}
+		require(['jquery', 'core_calendar/calendar_view'], function($, CalendarView) {
+		    CalendarView.init($("#calendar-upcoming-block-{{uniqid}}"), 'upcoming');
+		});
+	{{/js}}
+{{/isloggedin}}
