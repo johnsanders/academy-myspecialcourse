@@ -19,7 +19,10 @@
 			data-eventtype-{{normalisedeventtype}}="1"
 			data-region="event-item"
 		>
-			<div class="textContainer" style="display: flex; flex-direction: column; justify-content: space-evenly;">
+			<div
+				class="textContainer text-truncate" 
+				style="display: flex; flex-direction: column; justify-content: space-evenly; margin-right: 1em;"
+			>
 				<a
 					class="text-truncate"
 					data-type="event"
@@ -33,7 +36,7 @@
 			</div>
 			{{#imageurl}}
 				<a href="{{viewurl}}">
-					<img src={{imageurl}} style="max-height: 6em; border-radius: 10px;" />
+					<img class="d-none d-md-block" src={{imageurl}} style="max-height: 6em; border-radius: 10px;" />
 				</a>
 			{{/imageurl}}
 		</div>
