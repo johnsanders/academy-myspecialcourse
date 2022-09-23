@@ -1,5 +1,5 @@
 <div
-	class="block_calendar_upcoming"
+	class="block block_calendar_upcoming"
 	data-template="block_calendar_upcoming_img/main"
 	id="calendar-upcoming-block-{{uniqid}}"
 >
@@ -13,34 +13,34 @@
 		data-courseid="{{courseid}}"
 		data-categoryid="{{categoryid}}"
 	>
-	    {{#events}}
-		<div
-			class="event d-flex align-items-center justify-content-between
-			data-eventtype-{{normalisedeventtype}}="1"
-			data-region="event-item"
-		>
+		{{#events}}
 			<div
-				class="textContainer text-truncate" 
-				style="display: flex; flex-direction: column; justify-content: space-evenly; margin-right: 1em;"
+				class="event d-flex align-items-center justify-content-between
+				data-eventtype-{{normalisedeventtype}}="1"
+				data-region="event-item"
 			>
-				<a
-					class="text-truncate"
-					data-type="event"
-					data-action="view-event"
-					data-event-id="{{id}}"
-					href="{{viewurl}}"
+				<div
+					class="textContainer text-truncate" 
+					style="display: flex; flex-direction: column; justify-content: space-evenly; margin-right: 1em;"
 				>
-					{{{name}}}
-				</a>
-				<div class="date">{{{formattedtime}}}</div>
+					<a
+						class="text-truncate"
+						data-type="event"
+						data-action="view-event"
+						data-event-id="{{id}}"
+						href="{{viewurl}}"
+					>
+						{{{name}}}
+					</a>
+					<div class="date">{{{formattedtime}}}</div>
+				</div>
+				{{#imageurl}}
+					<a href="{{{viewurl}}}">
+						<img class="d-none d-md-block" src={{{imageurl}}} style="max-height: 6em; border-radius: 10px;" />
+					</a>
+				{{/imageurl}}
 			</div>
-			{{#imageurl}}
-				<a href="{{viewurl}}">
-					<img class="d-none d-md-block" src={{imageurl}} style="max-height: 6em; border-radius: 10px;" />
-				</a>
-			{{/imageurl}}
-		</div>
-	    {{/events}}
+	  {{/events}}
 	</div>
 </div>
 {{#js}}

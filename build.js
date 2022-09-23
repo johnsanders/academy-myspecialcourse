@@ -4,6 +4,7 @@ import fsExtra from 'fs-extra';
 
 const outDir = './dist';
 const pluginNames = [
+	'block_academyresources',
 	'block_calendar_upcoming_img',
 	'block_myspecialcourse',
 	'mod_vimeo',
