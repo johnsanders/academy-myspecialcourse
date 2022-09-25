@@ -65,3 +65,15 @@ div.event div.row:has( i[title="Group"]) {
 .academyHiddenImportant {
   display: none !important;
 }
+/* Hide badges dashboard block */
+.block_badges {
+  display: none !important;
+}
+/* Add dark background to Vimeo plugin */
+body#page-mod-vimeo-view,
+body#page-mod-vimeo-view #page-content,
+body#page-mod-vimeo-view #page-content h1,
+body#page-mod-vimeo-view #learningcontent {
+	background-color: #212027 !important;
+	color: white !important;
+}
