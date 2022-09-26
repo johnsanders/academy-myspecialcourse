@@ -17,7 +17,6 @@ function vimeo_supports($feature)
             return null;
     }
 }
-
 function get_vimeo_id($vimeo_url)
 {
     preg_match('/vimeo.com\/([0-9]+).?/i', $vimeo_url, $matches);
@@ -36,7 +35,6 @@ function vimeo_add_instance($moduleinstance)
     $id = $DB->insert_record('vimeo', $moduleinstance);
     return $id;
 }
-
 function vimeo_update_instance($moduleinstance)
 {
     global $DB;
@@ -46,7 +44,6 @@ function vimeo_update_instance($moduleinstance)
     $moduleinstance->vimeoid = $vimeo_id;
     return $DB->update_record('vimeo', $moduleinstance);
 }
-
 function vimeo_delete_instance($id)
 {
     global $DB;
