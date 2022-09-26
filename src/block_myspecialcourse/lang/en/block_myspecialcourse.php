@@ -7,4 +7,7 @@ $string['pluginname'] = 'CNN Academy: My Special Course';
 $string['courseid'] = 'Special Course ID';
 $string['title'] = 'Title';
 $string['myresources'] = 'My Resources';
+$string['recordedseminars'] = 'Recorded Seminars';
 $string['coolstuff'] = 'Cool Stuff';
+$string['maxitems'] = 'Maximum Items';
+$string['maxnamelength'] = 'Maximum Name Length';

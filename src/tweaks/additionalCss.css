@@ -2,6 +2,10 @@
 .pagelayout-mydashboard .block-myoverview div[data-course-id="36"] {
   display: none;
 }
+/* Hide Course Resources course in dashboard My Overview block because we're using it as My Resources*/
+.pagelayout-mydashboard .block-myoverview div[data-course-id="43"] {
+  display: none;
+}
 /* Hide Ethics - Kurdish course in dashboard My Overview block because we're using it as My Resources*/
 .pagelayout-mydashboard .block-myoverview div[data-course-id="39"] {
   display: none;
@@ -20,6 +24,10 @@
 }
 /* Hide Erbil resources course on My Courses page */
 #page-local-mycourses-index .block-myoverview div[data-course-id="38"] {
+  display: none;
+}
+/* Hide Course Resources course on My Courses page */
+#page-local-mycourses-index .block-myoverview div[data-course-id="43"] {
   display: none;
 }
 /* Always show calender events, even at smallest breakpoint */
@@ -69,6 +77,10 @@ div.event div.row:has( i[title="Group"]) {
 .block_badges {
   display: none !important;
 }
+/* Make Recently Accessed dashboard links underline on hover */
+.pagelayout-mydashboard .block .block-cards a .course-info-container:hover {
+	text-decoration: underline;
+}
 /* Add dark background to Vimeo plugin */
 body#page-mod-vimeo-view,
 body#page-mod-vimeo-view #page-content,
@@ -77,3 +89,4 @@ body#page-mod-vimeo-view #learningcontent {
 	background-color: #212027 !important;
 	color: white !important;
 }
+
