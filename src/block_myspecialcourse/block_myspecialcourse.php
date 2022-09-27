@@ -28,7 +28,7 @@ class block_myspecialcourse extends block_base
         if (!$this->config->courseid) {
             return null;
         }
-        $course = $DB->get_record('course', array('id' => $this->config->courseid));
+        $course = $DB->get_record('course', ['id' => $this->config->courseid]);
         $modulesInfo = get_fast_modinfo($course);
         $templateData = new stdClass;
         $templateData->title = get_string($this->config->title, 'block_myspecialcourse');
